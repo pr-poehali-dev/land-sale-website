@@ -1,26 +1,11 @@
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [investmentAmount, setInvestmentAmount] = useState(5000000);
-  const [developmentPeriod, setDevelopmentPeriod] = useState(5);
-
-  const calculatePotential = () => {
-    const annualReturn = 0.15;
-    const totalReturn = investmentAmount * Math.pow(1 + annualReturn, developmentPeriod);
-    const profit = totalReturn - investmentAmount;
-    return { totalReturn, profit, annualReturn };
-  };
-
-  const { totalReturn, profit, annualReturn } = calculatePotential();
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Header */}
@@ -29,13 +14,13 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
-                <Icon name="Mountain" size={20} className="text-white" />
+                <Icon name="Waves" size={20} className="text-white" />
               </div>
-              <span className="text-xl font-semibold text-charcoal">PREMIUM LAND</span>
+              <span className="text-xl font-semibold text-charcoal">SEA LAND</span>
             </div>
             <nav className="hidden md:flex space-x-8">
               <a href="#участок" className="text-slate-600 hover:text-gold transition-colors">Участок</a>
-              <a href="#расположение" className="text-slate-600 hover:text-gold transition-colors">Расположение</a>
+              <a href="#бизнес" className="text-slate-600 hover:text-gold transition-colors">Бизнес</a>
               <a href="#галерея" className="text-slate-600 hover:text-gold transition-colors">Галерея</a>
               <a href="#документы" className="text-slate-600 hover:text-gold transition-colors">Документы</a>
               <a href="#контакты" className="text-slate-600 hover:text-gold transition-colors">Контакты</a>
@@ -52,28 +37,28 @@ const Index = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="/img/4a03bb6f-2e64-4d25-a72c-324e67d1f979.jpg" 
-            alt="Премиальный участок земли" 
+            src="/img/197fba34-9a93-4045-b1d8-34a601407081.jpg" 
+            alt="Участок у моря в Крыму" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-6 bg-gold text-white px-4 py-2 text-sm">
-            ЭКСКЛЮЗИВНОЕ ПРЕДЛОЖЕНИЕ
+            ПЕРВАЯ ЛИНИЯ МОРЯ
           </Badge>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Элитный участок<br />
-            <span className="text-gold">для развития</span>
+            Участок у моря<br />
+            <span className="text-gold">в Крыму</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-slate-200 max-w-2xl mx-auto">
-            Уникальная возможность инвестировать в перспективную недвижимость 
-            с высоким потенциалом роста стоимости
+            1,5 метра до береговой линии Азовского моря. 
+            Идеально для туристического бизнеса — глэмпинга или мини-отеля
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="bg-gold hover:bg-gold-dark text-white px-8 py-4 text-lg">
-              <Icon name="Calculator" size={20} className="mr-2" />
-              Рассчитать доходность
+              <Icon name="Building2" size={20} className="mr-2" />
+              Возможности бизнеса
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-charcoal px-8 py-4 text-lg">
               <Icon name="MapPin" size={20} className="mr-2" />
@@ -84,30 +69,30 @@ const Index = () => {
       </section>
 
       {/* Key Features */}
-      <section className="py-20 bg-white">
+      <section id="участок" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
-              Преимущества участка
+              Характеристики участка
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Исключительные характеристики для успешного инвестирования
+              Уникальный участок для туристического бизнеса на первой линии моря
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="TrendingUp" size={32} className="text-gold" />
+                  <Icon name="Waves" size={32} className="text-gold" />
                 </div>
-                <CardTitle className="text-2xl text-charcoal">Высокая доходность</CardTitle>
+                <CardTitle className="text-2xl text-charcoal">Первая линия моря</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-slate-600 mb-4">
-                  Ожидаемая доходность до 15% годовых с учетом роста стоимости земли
+                  Всего 1,5 метра до береговой линии Азовского моря с прямым выходом к пляжу
                 </p>
                 <Badge variant="secondary" className="bg-gold/10 text-gold">
-                  15% годовых
+                  6 соток
                 </Badge>
               </CardContent>
             </Card>
@@ -115,16 +100,16 @@ const Index = () => {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="MapPin" size={32} className="text-gold" />
+                  <Icon name="Mountain" size={32} className="text-gold" />
                 </div>
-                <CardTitle className="text-2xl text-charcoal">Премиальное расположение</CardTitle>
+                <CardTitle className="text-2xl text-charcoal">Трёхуровневый участок</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-slate-600 mb-4">
-                  Стратегическое расположение в развивающемся районе с отличной инфраструктурой
+                  Каскадная застройка с видом на море из каждого домика. До 6 глэмпингов
                 </p>
                 <Badge variant="secondary" className="bg-gold/10 text-gold">
-                  А+ локация
+                  70% застройки
                 </Badge>
               </CardContent>
             </Card>
@@ -132,16 +117,16 @@ const Index = () => {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Shield" size={32} className="text-gold" />
+                  <Icon name="Car" size={32} className="text-gold" />
                 </div>
-                <CardTitle className="text-2xl text-charcoal">Юридическая чистота</CardTitle>
+                <CardTitle className="text-2xl text-charcoal">Готовая инфраструктура</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-slate-600 mb-4">
-                  Все документы готовы, полное право собственности, никаких обременений
+                  Асфальт до участка, электричество, вода и интернет по границе
                 </p>
                 <Badge variant="secondary" className="bg-gold/10 text-gold">
-                  100% готов
+                  25 км до моста
                 </Badge>
               </CardContent>
             </Card>
@@ -149,85 +134,84 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Calculator Section */}
-      <section id="калькулятор" className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+      {/* Business Opportunities */}
+      <section id="бизнес" className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
-              Калькулятор доходности
+              Возможности для бизнеса
             </h2>
             <p className="text-xl text-slate-600">
-              Рассчитайте потенциальную прибыль от инвестиций в земельный участок
+              Уникальная возможность для запуска туристического проекта
             </p>
           </div>
           
-          <Card className="border-0 shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center text-charcoal">
-                Расчет инвестиционного потенциала
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="investment" className="text-lg font-medium">
-                    Сумма инвестиций (₽)
-                  </Label>
-                  <Input
-                    id="investment"
-                    type="number"
-                    value={investmentAmount}
-                    onChange={(e) => setInvestmentAmount(Number(e.target.value))}
-                    className="text-lg h-12"
-                  />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-8">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Icon name="Tent" size={24} className="text-gold" />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="period" className="text-lg font-medium">
-                    Период развития (лет)
-                  </Label>
-                  <Input
-                    id="period"
-                    type="number"
-                    value={developmentPeriod}
-                    onChange={(e) => setDevelopmentPeriod(Number(e.target.value))}
-                    className="text-lg h-12"
-                    min="1"
-                    max="20"
-                  />
+                <div>
+                  <h3 className="text-xl font-semibold text-charcoal mb-2">Эко-глэмпинг</h3>
+                  <p className="text-slate-600">Панорамные домики с видом на море. Полная приватность и уникальная атмосфера</p>
                 </div>
               </div>
-
-              <Separator />
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="space-y-2">
-                  <p className="text-sm text-slate-600">Годовая доходность</p>
-                  <p className="text-3xl font-bold text-gold">
-                    {(annualReturn * 100).toFixed(0)}%
-                  </p>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Icon name="Building2" size={24} className="text-gold" />
                 </div>
-                <div className="space-y-2">
-                  <p className="text-sm text-slate-600">Общая прибыль</p>
-                  <p className="text-3xl font-bold text-green-600">
-                    ₽{profit.toLocaleString('ru-RU')}
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-sm text-slate-600">Итоговая сумма</p>
-                  <p className="text-3xl font-bold text-charcoal">
-                    ₽{totalReturn.toLocaleString('ru-RU')}
-                  </p>
+                <div>
+                  <h3 className="text-xl font-semibold text-charcoal mb-2">Мини-отель</h3>
+                  <p className="text-slate-600">Комфортабельные номера с террасами. Высокая арендная привлекательность</p>
                 </div>
               </div>
-
-              <div className="text-center pt-4">
-                <Button className="bg-gold hover:bg-gold-dark text-white px-8 py-4 text-lg">
-                  <Icon name="Download" size={20} className="mr-2" />
-                  Скачать расчет
-                </Button>
+              
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Icon name="Utensils" size={24} className="text-gold" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-charcoal mb-2">Общий бассейн и кафе</h3>
+                  <p className="text-slate-600">Дополнительные зоны отдыха, СПА-зона для повышения доходности</p>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+            
+            <Card className="border-0 shadow-xl p-8">
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-3xl text-charcoal">Потенциал участка</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-2 gap-6 text-center">
+                  <div className="space-y-2">
+                    <p className="text-2xl font-bold text-gold">6</p>
+                    <p className="text-sm text-slate-600">глэмпингов</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-2xl font-bold text-gold">100%</p>
+                    <p className="text-sm text-slate-600">вид на море</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-2xl font-bold text-gold">25 км</p>
+                    <p className="text-sm text-slate-600">до моста</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-2xl font-bold text-gold">1,5 м</p>
+                    <p className="text-sm text-slate-600">до пляжа</p>
+                  </div>
+                </div>
+                
+                <Separator />
+                
+                <div className="text-center">
+                  <p className="text-lg font-semibold text-charcoal mb-2">Бухта Булганак</p>
+                  <p className="text-slate-600">Вода прогревается раньше и держит тепло дольше</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -243,18 +227,18 @@ const Index = () => {
             <TabsContent value="gallery" className="space-y-8">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-charcoal mb-4">Галерея участка</h2>
-                <p className="text-xl text-slate-600">Фотографии и визуализации земельного участка</p>
+                <p className="text-xl text-slate-600">Фотографии участка у моря в Крыму</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative overflow-hidden rounded-lg shadow-lg group">
                   <img 
-                    src="/img/4a03bb6f-2e64-4d25-a72c-324e67d1f979.jpg" 
-                    alt="Aerial view" 
+                    src="/img/197fba34-9a93-4045-b1d8-34a601407081.jpg" 
+                    alt="Seaside view" 
                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-xl font-semibold">Вид с высоты</h3>
+                    <h3 className="text-xl font-semibold">Вид на море</h3>
                   </div>
                 </div>
                 <div className="relative overflow-hidden rounded-lg shadow-lg group">
@@ -274,41 +258,41 @@ const Index = () => {
             <TabsContent value="location" className="space-y-8">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-charcoal mb-4">Расположение</h2>
-                <p className="text-xl text-slate-600">Стратегическое местоположение с развитой инфраструктурой</p>
+                <p className="text-xl text-slate-600">Первая линия пляжа Азовского моря в бухте Булганак</p>
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="Waves" size={24} className="text-gold" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-charcoal mb-2">Песчаный пляж</h3>
+                      <p className="text-slate-600">Пологий вход в море, идеально для семейного отдыха</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="Thermometer" size={24} className="text-gold" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-charcoal mb-2">Теплая вода</h3>
+                      <p className="text-slate-600">Бухта Булганак — вода прогревается раньше и дольше остается теплой</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <Icon name="Car" size={24} className="text-gold" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-charcoal mb-2">Транспортная доступность</h3>
-                      <p className="text-slate-600">5 минут до крупной автомагистрали, удобный подъезд</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Icon name="Zap" size={24} className="text-gold" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-charcoal mb-2">Коммуникации</h3>
-                      <p className="text-slate-600">Электричество, газ, водоснабжение на границе участка</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Icon name="Building" size={24} className="text-gold" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-charcoal mb-2">Инфраструктура</h3>
-                      <p className="text-slate-600">Школы, больницы, торговые центры в 10-15 минутах</p>
+                      <h3 className="text-xl font-semibold text-charcoal mb-2">Удобный подъезд</h3>
+                      <p className="text-slate-600">25 км до Крымского моста по новой асфальтированной дороге</p>
                     </div>
                   </div>
                 </div>
                 <div className="relative">
                   <img 
-                    src="/img/e3451d2b-e5c7-4809-9780-c78f06b35e14.jpg" 
+                    src="/img/197fba34-9a93-4045-b1d8-34a601407081.jpg" 
                     alt="Location advantages" 
                     className="w-full h-96 object-cover rounded-lg shadow-lg"
                   />
@@ -374,6 +358,16 @@ const Index = () => {
                     </Button>
                   </CardContent>
                 </Card>
+                
+                <div className="mt-6 p-4 bg-gold/10 rounded-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <Icon name="Shield" size={20} className="text-gold" />
+                    <span className="font-semibold text-charcoal">Прямая продажа от собственника</span>
+                  </div>
+                  <p className="text-sm text-slate-600">
+                    Все документы готовы. Полное право собственности, никаких обременений.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -388,7 +382,7 @@ const Index = () => {
                   <div className="flex items-center space-x-4">
                     <Icon name="Phone" size={24} className="text-gold" />
                     <div>
-                      <p className="font-semibold text-charcoal">+7 (495) 123-45-67</p>
+                      <p className="font-semibold text-charcoal">+7 (978) 123-45-67</p>
                       <p className="text-sm text-slate-600">Звонки принимаются с 9:00 до 21:00</p>
                     </div>
                   </div>
@@ -396,7 +390,7 @@ const Index = () => {
                   <div className="flex items-center space-x-4">
                     <Icon name="Mail" size={24} className="text-gold" />
                     <div>
-                      <p className="font-semibold text-charcoal">info@premiumland.ru</p>
+                      <p className="font-semibold text-charcoal">info@sealand-crimea.ru</p>
                       <p className="text-sm text-slate-600">Ответим в течение часа</p>
                     </div>
                   </div>
@@ -404,8 +398,8 @@ const Index = () => {
                   <div className="flex items-center space-x-4">
                     <Icon name="MapPin" size={24} className="text-gold" />
                     <div>
-                      <p className="font-semibold text-charcoal">Офис продаж</p>
-                      <p className="text-sm text-slate-600">Москва, ул. Тверская, 15, офис 201</p>
+                      <p className="font-semibold text-charcoal">Участок в Крыму</p>
+                      <p className="text-sm text-slate-600">Бухта Булганак, первая линия моря</p>
                     </div>
                   </div>
                   
@@ -428,12 +422,12 @@ const Index = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
-                <Icon name="Mountain" size={20} className="text-white" />
+                <Icon name="Waves" size={20} className="text-white" />
               </div>
-              <span className="text-2xl font-semibold">PREMIUM LAND</span>
+              <span className="text-2xl font-semibold">SEA LAND</span>
             </div>
             <p className="text-slate-300 mb-6">
-              Эксклюзивные земельные участки для успешных инвестиций
+              Участок у моря в Крыму для туристического бизнеса
             </p>
             <div className="flex justify-center space-x-6">
               <a href="#" className="text-slate-300 hover:text-gold transition-colors">
@@ -448,7 +442,7 @@ const Index = () => {
             </div>
             <Separator className="my-8 bg-slate-700" />
             <p className="text-slate-400 text-sm">
-              © 2024 Premium Land. Все права защищены.
+              © 2024 Sea Land. Все права защищены.
             </p>
           </div>
         </div>
