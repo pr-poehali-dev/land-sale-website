@@ -32,6 +32,16 @@ export default {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
+				gold: {
+					DEFAULT: '#B8860B',
+					light: '#DAA520',
+					dark: '#9A7209'
+				},
+				charcoal: {
+					DEFAULT: '#2D3748',
+					light: '#4A5568',
+					dark: '#1A202C'
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
